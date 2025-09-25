@@ -1,0 +1,137 @@
+/* Reset default browser styles for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Russo+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Set up base body styles: font, background, color, line height, min height */
+:root {
+    --base:      rgb(35, 33, 54);
+    --surface:   rgb(42,39,63);
+    --overlay:   rgb(57,53,82);
+    --foam:      rgb(156,207,216);
+    --gold:      rgb(246,193,119);
+    --rose:      rgb(234,154,151);
+    --iris:      rgb(196,167,231);
+    --text:      rgb(224,222,244);
+    --subtle:    rgb(195, 194, 205);
+
+    --font-audiowide: 'Audiowide', sans-serif;
+    --font-major-mono: 'Major Mono Display', monospace;
+    --font-orbitron: 'Orbitron', sans-serif;
+    --font-russo-one: 'Russo One', sans-serif;
+    --font-ubuntu: 'Ubuntu', sans-serif;
+
+    /* Colors */
+    --neon-yellow:  #ffb84d;
+    --neon-pink:    #ff00ff;
+    --neon-blue:    #00ffff;
+    --neon-purple:  #a739e7;
+    --neon-orange:  #ff7f00;
+
+    /* Glow Intensities */
+    --glow-subtle: 0 0 3px;
+    --glow-small: 0 0 5px;
+    --glow-medium: 0 0 15px;
+    --glow-large: 0 0 30px;
+    --glow-xlarge: 0 0 60px;
+    --glow-xxlarge: 0 0 100px;
+
+}
+body {
+    background-color: #111111; /* TODO look into contrast for black background for card*/
+    font-family: var(--font-audiowide);
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#card {
+    background-color: #000;
+    border: 1px solid var(--neon-purple);
+    box-shadow: inset 0 0 10px var(--neon-purple), 0 0 1px var(--neon-purple);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    max-width: 368px;
+    max-height: 210px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 1s ease;
+
+}
+#card:hover{
+    transform: translateY(-10px);
+}
+#card-header {
+    position: relative;
+    border-bottom: whitesmoke 2px dotted;
+    padding: 0 0 10px 0;
+    color: var(--neon-pink);
+    text-shadow:
+    var(--glow-subtle) currentColor;
+}
+/*#card-header::after {
+    position:absolute;
+    content: "";
+    background-color: var(--neon-purple);
+    width: 40px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+}*/
+
+/*Icon Sizes*/
+.icon-sm { width: 16px; height: 16px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 48px; height: 48px; }
+
+/*Links*/
+a svg {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+a:link {
+    color: var(--neon-yellow)
+}
+
+#card-contacts {
+    font-size: 0.75rem;
+    color: var(--neon-yellow);
+    /*text-shadow: ;*/ /*TODO what was I doing here?*/
+    padding: 10px 0 0c 0;
+    filter: drop-shadow( 0 0 1px currentColor);
+}
+
+#email, #location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;/*items were not aligned within flexbox, this fixed it*/
+    gap: 8px; /*spacing between icon and text*/
+    padding: 2.5px 0 2.5px 0;
+    justify-content: flex-start;
+
+    
+}
+
+/*Indiv Font Sizes*/
+#name {
+    font-size: 1.85rem;
+}
+#title, #degree{
+    font-size: 0.75rem;
+    color: var(--neon-purple);
+}
+#card-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* Use flex-end for right alignment */
+    color: var(--neon-blue);
+    fill: var(--neon-blue);
+    filter: drop-shadow( 0 0 1px currentColor);
+    width: 100%; /* Ensure it takes full width of parent */
+}
+
